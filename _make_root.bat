@@ -27,7 +27,10 @@ openssl req -new -key root\root.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME
 rem --------------------------------------------------------
 rem make crt file(root.crt)
 rem --------------------------------------------------------
-openssl x509 -req -days 3650 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
+date 04-29-2023
+time 12:00:00.00
+openssl x509 -req -days 3653 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
+rem rdate -s time.bora.net
 goto eof
 
 :usage
