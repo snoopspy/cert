@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # --------------------------------------------------------
-# usage   : make_root <common name>
-# example : make_root DigiCert
+# usage   : _make_root <common name>
+# example : _make_root gilgil
 # --------------------------------------------------------
 if [ -z "$1" ]; then
-	echo "usage   : make_root <common name>"
-	echo "example : make_root DigiCert"
+	echo "usage   : _make_root <common name>"
+	echo "example : _make_root gilgil"
 	exit 1
 fi
 COMMON_NAME="$1"
