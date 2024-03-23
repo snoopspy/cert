@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # --------------------------------------------------------
-# usage   : _make_site <common name> [<base file name>]
-# example : _make_site foo.com
+# usage   : ./_make_site.sh <common name> [<base file name>]
+# example : ./_make_site.sh foo.com
 # --------------------------------------------------------
 if [ -z "$1" ]; then
-	echo "usage   : _make_site <common name> [<base file name>]"
-	echo "example : _make_site foo.com"
+	echo "usage   : ./_make_site.sh <common name> [<base file name>]"
+	echo "example : ./_make_site.sh foo.com"
 	exit 1
 fi
 COMMON_NAME="$1"

@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # --------------------------------------------------------
-# usage   : _test_site <base file name>
-# example : _test_site foo.com
+# usage   : ./_test_site.sh <base file name>
+# example : ./_test_site.sh foo.com
 # --------------------------------------------------------
 if [ -z "$1" ]; then
-	echo "usage   : _test_site <base file name>"
-	echo "example : _test_site foo.com"
+	echo "usage   : ./_test_site.sh <base file name>"
+	echo "example : ./_test_site.sh foo.com"
 	exit 1
 fi
 BASE_FILE_NAME="$1"
