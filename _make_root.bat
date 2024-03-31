@@ -22,7 +22,7 @@ openssl genrsa -out root\root.key 4096
 rem --------------------------------------------------------
 rem make csr file(root.csr)
 rem --------------------------------------------------------
-openssl req -new -key root\root.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME%/OU=%COMMON_NAME%" -out root\root.csr
+openssl req -new -key root\root.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME%" -out root\root.csr
 
 rem --------------------------------------------------------
 rem make crt file(root.crt)
@@ -35,7 +35,7 @@ goto eof
 
 :usage
 echo "usage   : _make_root <common name>"
-echo "example : _make_root DigiCert"
+echo "example : _make_root gilgil"
 goto eof
 
 :exist_error

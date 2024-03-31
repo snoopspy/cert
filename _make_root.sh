@@ -2,11 +2,11 @@
 
 # --------------------------------------------------------
 # usage   : ./_make_root.sh <common name>
-# example : ./_make_root.sh DigiCert
+# example : ./_make_root.sh gilgil
 # --------------------------------------------------------
 if [ -z "$1" ]; then
 	echo "usage   : ./_make_root.sh <common name>"
-	echo "example : ./_make_root.sh DigiCert"
+	echo "example : ./_make_root.sh gilgil"
 	exit 1
 fi
 COMMON_NAME="$1"
@@ -29,7 +29,7 @@ openssl genrsa -out root/root.key 2048
 # --------------------------------------------------------
 # make csr file(root.csr)
 # --------------------------------------------------------
-openssl req -new -key root/root.key -subj "/C=US/CN=$COMMON_NAME/O=$COMMON_NAME/OU=$COMMON_NAME" -out root/root.csr
+openssl req -new -key root/root.key -subj "/C=US/CN=$COMMON_NAME/O=$COMMON_NAME" -out root/root.csr
 
 # --------------------------------------------------------
 # make crt file(root.crt)
