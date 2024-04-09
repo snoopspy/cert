@@ -20,7 +20,7 @@ openssl genrsa -out %BASE_FILE_NAME%.key 2048
 rem --------------------------------------------------------
 rem make csr file(foo.com.csr)
 rem --------------------------------------------------------
-openssl req -new -key %BASE_FILE_NAME%.key -subj "/C=US/CN=%COMMON_NAME%/O=%BASE_FILE_NAME%/OU=%BASE_FILE_NAME%" -out %BASE_FILE_NAME%.csr
+openssl req -new -key %BASE_FILE_NAME%.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME%" -out %BASE_FILE_NAME%.csr
 
 rem --------------------------------------------------------
 rem make crt file(foo.com.crt)
