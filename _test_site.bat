@@ -1,3 +1,5 @@
+@echo off
+
 rem --------------------------------------------------------
 rem usage   : _test_site <base file name>
 rem example : _test_site foo.com

@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 
 rem --------------------------------------------------------
 rem usage   : _make_site <common name> [<base file name>]
@@ -27,7 +27,6 @@ rem make crt file(foo.com.crt)
 rem --------------------------------------------------------
 rem openssl x509 -req -days 3650 -in %BASE_FILE_NAME%.csr -CA root\root.crt -CAcreateserial -CAkey root\root.key -out %BASE_FILE_NAME%.crt -extfile <(echo "subjectAltName=DNS:%COMMON_NAME%,DNS:*.%COMMON_NAME%")
 openssl x509 -req -days 3650 -in %BASE_FILE_NAME%.csr -CA root\root.crt -CAcreateserial -CAkey root\root.key -out %BASE_FILE_NAME%.crt
-goto eof
 
 rem --------------------------------------------------------
 rem make pkcs file(foo.com.pfx)
@@ -38,6 +37,7 @@ rem --------------------------------------------------------
 rem make pem file(foo.com.pem)
 rem --------------------------------------------------------
 copy %BASE_FILE_NAME%.key + %BASE_FILE_NAME.%crt %BASE_FILE_NAME%.pem
+goto eof
 
 :usage
 echo "usage   : _make_site <common name> [<base file name>]"

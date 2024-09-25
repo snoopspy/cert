@@ -35,7 +35,7 @@ rem rdate -s time.bora.net
 rem --------------------------------------------------------
 rem make pem file(root.pem)
 rem --------------------------------------------------------
-copy root/root.key + root/root.crt root/root.pem
+copy root\root.key + root\root.crt root\root.pem
 
 goto eof
 
