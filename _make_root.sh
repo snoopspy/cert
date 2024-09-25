@@ -37,3 +37,8 @@ openssl req -new -key root/root.key -subj "/C=US/CN=$COMMON_NAME/O=$COMMON_NAME"
 sudo date -s "29 APR 2023 12:00:00"
 openssl x509 -req -days 3653 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root/root.key -out root/root.crt
 rdate -s time.bora.net
+
+# --------------------------------------------------------
+# make pem file(root.pem)
+# --------------------------------------------------------
+cat root/root.key root/root.crt > root/root.pem

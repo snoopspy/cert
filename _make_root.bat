@@ -31,6 +31,12 @@ date 04-29-2023
 time 12:00:00.00
 openssl x509 -req -days 3653 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
 rem rdate -s time.bora.net
+
+rem --------------------------------------------------------
+rem make pem file(root.pem)
+rem --------------------------------------------------------
+copy root/root.key + root/root.crt root/root.pem
+
 goto eof
 
 :usage
