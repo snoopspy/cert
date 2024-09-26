@@ -29,6 +29,11 @@ rem openssl x509 -req -days 3650 -in %BASE_FILE_NAME%.csr -CA root\root.crt -CAc
 openssl x509 -req -days 3650 -in %BASE_FILE_NAME%.csr -CA root\root.crt -CAcreateserial -CAkey root\root.key -out %BASE_FILE_NAME%.crt
 
 rem --------------------------------------------------------
+rem make der file(foo.com.der)
+rem --------------------------------------------------------
+openssl x509 -inform pem -in %BASE_FILE_NAME%.crt -outform der -out %BASE_FILE_NAME%.der
+
+rem --------------------------------------------------------
 rem make pkcs file(foo.com.pfx)
 rem --------------------------------------------------------
 openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -export -in %BASE_FILE_NAME%.crt -inkey %BASE_FILE_NAME%.key -out %BASE_FILE_NAME%.pfx -name "%COMMON_NAME%" -passin pass: -passout pass:

@@ -39,6 +39,11 @@ openssl x509 -req -days 3653 -extensions v3_ca -set_serial 1 -in root/root.csr -
 rdate -s time.bora.net
 
 # --------------------------------------------------------
+# make der file(root.der)
+# --------------------------------------------------------
+openssl x509 -inform pem -in root/root.crt -outform der -out root/root.der
+
+# --------------------------------------------------------
 # make pem file(root.pem)
 # --------------------------------------------------------
 cat root/root.key root/root.crt > root/root.pem
