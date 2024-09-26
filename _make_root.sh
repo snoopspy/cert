@@ -34,8 +34,8 @@ openssl req -new -key root/root.key -subj "/C=US/CN=$COMMON_NAME/O=$COMMON_NAME"
 # --------------------------------------------------------
 # make crt file(root.crt)
 # --------------------------------------------------------
-sudo date -s "29 APR 2023 12:00:00"
-openssl x509 -req -days 3653 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root/root.key -out root/root.crt
+sudo date -s "29 APR 2024 12:00:00"
+openssl x509 -req -days 3652 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root/root.key -out root/root.crt
 sudo rdate -s time.bora.net
 
 # --------------------------------------------------------
