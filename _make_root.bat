@@ -29,7 +29,7 @@ rem make crt file(root.crt)
 rem --------------------------------------------------------
 date 04-29-2024
 time 12:00:00.00
-openssl x509 -req -days 3652 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
+openssl x509 -req -days 4748 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
 rem rdate -s time.bora.net
 
 rem --------------------------------------------------------
