@@ -22,15 +22,22 @@ openssl genrsa -out root\root.key 4096
 rem --------------------------------------------------------
 rem make csr file(root.csr)
 rem --------------------------------------------------------
-openssl req -new -key root\root.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME%" -out root\root.csr
+openssl req -new -key root\root.key -subj "/C=US/CN=%COMMON_NAME%/O=%COMMON_NAME%/OU=%COMMON_NAME%" -out root\root.csr
 
 rem --------------------------------------------------------
 rem make crt file(root.crt)
 rem --------------------------------------------------------
-date 04-29-2024
+rem timedatectl set-ntp false
+date 04-29-2026
 time 12:00:00.00
-openssl x509 -req -days 4748 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt
-rem rdate -s time.bora.net
+
+echo [v3_ca] > root\v3_ca.ext
+echo basicConstraints=critical,CA:true >> root\v3_ca.ext
+echo keyUsage=critical,keyCertSign,cRLSign >> root\v3_ca.ext
+echo subjectKeyIdentifier=hash >> root\v3_ca.ext
+openssl x509 -req -days 4748 -extensions v3_ca -set_serial 1 -in root/root.csr -signkey root\root.key -out root\root.crt -extfile root\v3_ca.ext
+del root\v3_ca.ext
+rem sudo timedatectl set-ntp true # sudo rdate -s time.bora.net
 
 rem --------------------------------------------------------
 rem make der file(root.der)
